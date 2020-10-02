@@ -16,7 +16,10 @@
 <header class="l-header">
 </header>
 <main>
-    <div class="sgt-pop sgtpopup">
+    <div class="sgt-root" style="display: none;">
+        <input type="hidden" id="sgt_popup" value="sgtpopup-welcome">
+    </div>
+    <div id="sgtpopup-welcome" class="sgt-pop sgtpopup">
         <div class="sgt-builder sgt-bld-showme">
             <div class="sgt-bld__step__content sgt-bld__center">
                 <div id="sgt-bld__step__inner" data-width="857" data-height="412"
@@ -24,12 +27,7 @@
                     <span class="sgt-button__close">
                     </span>
                     <div class="sgt-content__image">
-                        <div class="sgt-content__image__summer">
-                            <img src="./assets/img/Summer_Sale.png" alt="Summer_sale">
-                        </div>
-                        <div class="sgt-content__image__sale30">
-                            <img src="./assets/img/sale30.png" alt="Sale30%">
-                        </div>
+                        <img src="./assets/img/summer_sales.png" alt="Summer_sale">
                     </div>
                     <div class="sgt-content__form">
                         <form action="#" class=" sgt-subscribeform sgt__subscribeform">
@@ -49,5 +47,6 @@
 </footer>
 <script src="./assets/js/jquery.min.js"></script>
 <script src="./assets/js/lazysizes.min.js"></script>
+<script src="./assets/js/home.js"></script>
 </body>
 </html>

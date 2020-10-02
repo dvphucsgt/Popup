@@ -97,37 +97,17 @@ body {
 
 .sgt-content {
   &__image {
-    border: 1px solid transparent;
+    position: relative;
     width: 374px;
     height: 412px;
-    top: -1px;
-    left: -1px;
     z-index: 100;
-    background: antiquewhite;
     -webkit-animation-delay: 500ms;
     animation-delay: 500ms;
-
-    &__summer {
-      position: relative;
-      width: 148px;
-      height: 89px;
-      top: 63px;
-    }
-
-    &__sale30 {
-      position: relative;
-      width: 286px;
-      height: 175px;
-      top: 100px;
-    }
   }
 
   &__form {
-    border: 1px solid transparent;
     width: 483px;
     height: 412px;
-    top: -1px;
-    left: -1px;
     z-index: 100;
     -webkit-animation-delay: 500ms;
     animation-delay: 500ms;
@@ -158,6 +138,7 @@ body {
     width: 345px;
     height: 40px;
     background: #FFF;
+    font-size: 14px;
     padding: 0 16px;
     border: 1px solid #D0D0D0;
     border-radius: 6px;
@@ -168,6 +149,7 @@ body {
     width: 345px;
     height: 40px;
     background: #C1292B;
+    font-size: 14px;
     color: #FFF;
     border-radius: 4px;
   }
