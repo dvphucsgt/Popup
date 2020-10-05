@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="assets/css/content.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/lazyload.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
 <header class="l-header">
 </header>
 <main>
+    <div id="loading"></div>
     <div class="sgt-root" style="display: none;">
         <input type="hidden" id="sgt_popup" value="sgtpopup-welcome">
     </div>
@@ -23,13 +25,16 @@
         <div class="sgt-builder sgt-bld-showme">
             <div class="sgt-bld__step__content sgt-bld__center">
                 <div id="sgt-bld__step__inner" data-width="857" data-height="412"
-                     class="sgt-bld__step sgt-bld__step-1 sgt-bld-showme">
+                     class="sgt-bld__step sgt-bld__step-1 sgt-bld-showme" data-animation="backInDown">
                     <span class="sgt-button__close">
                     </span>
                     <div class="sgt-content__image">
-                        <img src="./assets/img/summer_sales.png" alt="Summer_sale">
+                        <div class="sgt-content__imgOverlay animate__animated animate__bounceInLefft">
+                            <img src="./assets/img/summer_sales.png" alt="Summer_sale">
+                            <p class="sgt-content__offer">Offer valid only today!</p>
+                        </div>
                     </div>
-                    <div class="sgt-content__form">
+                    <div class="sgt-content__form animate__animated animate__bounceInRight">
                         <form action="#" class=" sgt-subscribeform sgt__subscribeform">
                             <h2 class="sgt-subscribeform__title">RESGITER!</h2>
                             <p class="sgt-subscribeform__description">Lorem ipsum dolor sit amet, consectetur adipiscing!</p>
@@ -40,13 +45,14 @@
                 </div>
             </div>
         </div>
-        <div class="sgt-overlay sgt-overlay__show" id="sgt-pop__overlay" data-close="yes"></div>
+        <div class="sgt-overlay sgt-overlay__show" id="sgt-pop__overlay"></div>
     </div>
 </main>
 <footer class="l-footer">
 </footer>
 <script src="./assets/js/jquery.min.js"></script>
 <script src="./assets/js/lazysizes.min.js"></script>
+<script src="./assets/js/animations.min.js"></script>
 <script src="./assets/js/home.js"></script>
 </body>
 </html>

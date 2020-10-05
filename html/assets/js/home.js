@@ -34,3 +34,20 @@ function sgt_responesive(j) {
         }
     }
 }
+function onReady(callback) {
+    var intervalId = window.setInterval(function() {
+        if (document.getElementsByTagName('body')[0] !== undefined) {
+            window.clearInterval(intervalId);
+            callback.call(this);
+        }
+    }, 1500);
+}
+
+function setVisible(selector, visible) {
+    document.querySelector(selector).style.display = visible ? 'block' : 'none';
+}
+onReady(function() {
+    setVisible('.sgt-bld__step__content', true);
+    setVisible('.sgt-overlay', true);
+    setVisible('#loading', false);
+});
