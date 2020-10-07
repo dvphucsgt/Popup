@@ -69,22 +69,21 @@ const clearAll = (items = [], className = 'active') => {
     items.forEach((item) => item.classList.remove(className));
 };
 
-const setEndListener = (target, defaultClass) => {
-    target.addEventListener('animationend', (e) => {
-        target.setAttribute('class', defaultClass);
-        document.documentElement.classList.remove('isPlaying');
-    });
-};
 const selectAnimation = (container = '.animation-list-select', target = '.sgt-bld__step-1') => {
     //Select box
     const containerSelect = document.querySelector(container);
     const targetEl = document.querySelector(target);
-    setEndListener(targetEl, target.replace('.', 'sgt-bld__step sgt-bld-showme '));
     containerSelect.addEventListener('change', (e) => {
         const animation = `animate__${containerSelect.value}`;
         targetEl.classList.add('animate__animated', animation);
         document.documentElement.classList.add('isPlaying');
         document.documentElement.classList.remove('animationList-active');
+        function handleAnimationEnd() {
+            targetEl.classList.remove('animate__animated', animation);
+            document.documentElement.classList.remove('isPlaying');
+        }
+
+        targetEl.addEventListener('animationend', handleAnimationEnd, {once: true});
     });
 
 };
