@@ -65,10 +65,6 @@ onReady(function () {
     setVisible('#loading', false);
 });
 
-const clearAll = (items = [], className = 'active') => {
-    items.forEach((item) => item.classList.remove(className));
-};
-
 const selectAnimation = (container = '.animation-list-select', target = '.sgt-bld__step-1') => {
     //Select box
     const containerSelect = document.querySelector(container);
