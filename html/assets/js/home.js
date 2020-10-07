@@ -1,8 +1,19 @@
-jQuery(document).ready(function(g) {
-    jQuery(window).resize(function() {
+jQuery(document).ready(function (g) {
+    startAnimation();
+    selectAnimation();
+    jQuery(window).resize(function () {
         sgt_responesive(false)
     });
+
+    $('.animation-item').click(function () {
+        selectAnimation();
+    });
+
+    $('.sgt-button__close').click(function () {
+        $('.sgt-bld__step__content').hide();
+    });
 });
+
 function sgt_responesive(j) {
     var a = jQuery("#sgt_popup").val();
     if (a !== undefined) {
@@ -34,8 +45,9 @@ function sgt_responesive(j) {
         }
     }
 }
+
 function onReady(callback) {
-    var intervalId = window.setInterval(function() {
+    var intervalId = window.setInterval(function () {
         if (document.getElementsByTagName('body')[0] !== undefined) {
             window.clearInterval(intervalId);
             callback.call(this);
@@ -46,8 +58,45 @@ function onReady(callback) {
 function setVisible(selector, visible) {
     document.querySelector(selector).style.display = visible ? 'block' : 'none';
 }
-onReady(function() {
+
+onReady(function () {
     setVisible('.sgt-bld__step__content', true);
     setVisible('.sgt-overlay', true);
     setVisible('#loading', false);
 });
+
+const clearAll = (items = [], className = 'active') => {
+    items.forEach((item) => item.classList.remove(className));
+};
+
+const setEndListener = (target, defaultClass) => {
+    target.addEventListener('animationend', (e) => {
+        target.setAttribute('class', defaultClass);
+        document.documentElement.classList.remove('isPlaying');
+    });
+};
+const selectAnimation = (container = '.animation-list-select', target = '.sgt-bld__step-1') => {
+    //Select box
+    const containerSelect = document.querySelector(container);
+    const targetEl = document.querySelector(target);
+    setEndListener(targetEl, target.replace('.', 'sgt-bld__step sgt-bld-showme '));
+    containerSelect.addEventListener('change', (e) => {
+        const animation = `animate__${containerSelect.value}`;
+        targetEl.classList.add('animate__animated', animation);
+        document.documentElement.classList.add('isPlaying');
+        document.documentElement.classList.remove('animationList-active');
+    });
+
+};
+
+const startAnimation = () => {
+    const popup = document.querySelector('.callout-popup');
+    const sidebar = document.querySelector('.animation-list-select');
+
+
+    const titleAnimation = 'zoomInDown';
+    const sidebarAnimation = 'fadeInRight';
+
+    popup.classList.add('animate__animated', `animate__${titleAnimation}`);
+    sidebar.classList.add('animate__animated', `animate__${sidebarAnimation}`)
+};

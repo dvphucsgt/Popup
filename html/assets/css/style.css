@@ -167,27 +167,19 @@ body {
 
 .sgt-button__close {
   position: absolute;
-  right: 33px;
-  top: 26px;
-  width: 20px;
-  height: 20px;
+  right: 24px;
+  top: 25px;
   cursor: pointer;
+  align-items: center;
+  padding: 3px;
+  justify-content: center;
+  background: #fff;
   z-index: 999;
   transition: 0.5s; }
-  .sgt-button__close:hover {
-    opacity: 1; }
-  .sgt-button__close::before, .sgt-button__close::after {
-    position: absolute;
-    left: 15px;
-    content: ' ';
-    height: 20px;
-    width: 2px;
-    background-color: #000;
-    border-radius: 1px; }
-  .sgt-button__close::before {
-    transform: rotate(45deg); }
-  .sgt-button__close::after {
-    transform: rotate(-45deg); }
+  .sgt-button__close img {
+    display: block;
+    width: 16px;
+    height: 16px; }
 
 #loading {
   display: block;
