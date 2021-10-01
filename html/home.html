@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="HOME">
+    <title>HOME</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/content.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/lazyload.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+<header class="l-header">
+</header>
+<main>
+    <div id="loading"></div>
+    <div class="sgt-root" style="display: none;">
+        <input type="hidden" id="sgt_popup" value="sgtpopup-welcome">
+    </div>
+    <div id="sgtpopup-welcome" class="sgt-pop sgtpopup">
+        <div class="sgt-builder sgt-bld-showme">
+            <div class="sgt-bld__step__content sgt-bld__center">
+                <div id="sgt-bld__step__inner" data-width="857" data-height="412"
+                     class="sgt-bld__step sgt-bld__step-1 sgt-bld-showme">
+                    <div class="sgt-button__close">
+                        <img src="./assets/img/close.png" alt="Close">
+                    </div>
+                    <div class="sgt-content__image">
+                        <div class="sgt-content__imgOverlay">
+                            <img src="./assets/img/summer_sales.png" alt="Summer_sale">
+                            <p class="sgt-content__offer">Offer valid only today!</p>
+                            <section class="animationGroup">
+                                <select name="animationList" class="animation-list-select" id="animationList">
+                                    <option class="animation-item" value="bounceIn">bounceIn</option>
+                                    <option class="animation-item" value="backInDown">backInDown</option>
+                                    <option class="animation-item" value="rotateInUpRight">rotateInUpRight</option>
+                                    <option class="animation-item" value="flipInX">flipInX</option>
+                                </select>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="sgt-content__form">
+                        <form action="#" class=" sgt-subscribeform sgt__subscribeform callout-popup">
+                            <h2 class="sgt-subscribeform__title">RESGITER!</h2>
+                            <p class="sgt-subscribeform__description">Lorem ipsum dolor sit amet, consectetur adipiscing!</p>
+                            <input type="email" name="email" placeholder="Enter your email address" class="sgt-subscribeform__email">
+                            <button type="button" class="sgt-subscribeform__button">RESGITER</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sgt-overlay sgt-overlay__show" id="sgt-pop__overlay"></div>
+    </div>
+</main>
+<footer class="l-footer">
+</footer>
+<script src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/lazysizes.min.js"></script>
+<script src="./assets/js/home.js"></script>
+</body>
+</html>
